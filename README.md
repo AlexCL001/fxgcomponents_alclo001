@@ -4,7 +4,7 @@
 
 ![alt tag](https://www.aceinfoway.com/blog/wp-content/uploads/2020/04/how-to-build-a-component-library.jpg)
 
-#### Start project 🚀 :
+#### Start the project 🚀 :
 
 *yarn install*
 
