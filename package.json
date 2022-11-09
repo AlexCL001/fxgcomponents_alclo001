@@ -1,17 +1,17 @@
 {
-  "name": "component-library-fxgarneau",
-  "version": "1.0.4",
-  "description": "420-314-A22-FX - Exemple",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build-lib": "rollup -c"
+  "name": "fxgcomponents_alclo001",
+  "version": "1.0.0",
+  "description": "librairie tp",
+  "main": "index.js",
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.9",
+    "@storybook/addon-docs": "^6.4.10",
+    "antd": "^4.18.2"
   },
-  "author": "Pierre-Luc Dube",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
@@ -19,7 +19,7 @@
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
-    "@storybook/react": "^6.4.9",
+    "@storybook/react": "^6.1.21",
     "babel-loader": "^8.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -34,13 +34,21 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@mui/icons-material": "^5.10.9",
-    "@mui/material": "^5.10.9",
-    "@storybook/addon-docs": "^6.4.10",
-    "antd": "^4.18.2"
-  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexCL001/fxgcomponents_alclo001.git"
+  },
+  "keywords": [
+    "react",
+    "component"
+  ],
+  "author": "Alexandre Cloutier-Lemay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexCL001/fxgcomponents_alclo001/issues"
+  },
+  "homepage": "https://github.com/AlexCL001/fxgcomponents_alclo001#readme"
 }

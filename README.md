@@ -1,10 +1,10 @@
-# Travail pratique 1️⃣
+# Travail pratique 1️⃣ 🐒
 
 ### Groupe Christopher Petryk et Alexandre Cloutier-Lemay
 
 ![alt tag](https://www.aceinfoway.com/blog/wp-content/uploads/2020/04/how-to-build-a-component-library.jpg)
 
-#### Start the project 🚀 :
+#### Start project 🚀 :
 
 *yarn install*
 
