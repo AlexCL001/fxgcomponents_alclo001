@@ -1,9 +1,8 @@
-name: NPM and STORYBOOK
+name: NPM Version Manager
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   version:
@@ -12,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+            token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
       - run: git config --global user.name '${{ secrets.GH_PUBLIC_NAME }}'
       - run: git config --global user.email '${{ secrets.GH_EMAIL }}'
       - run: npm version patch -m "[RELEASE] %s"
@@ -24,32 +23,29 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 12
-      - run: npm install
+          node-version: 12.x
+      - run: npm i
       - uses: JS-DevTools/npm-publish@v1
         with:
-          token: ${{ secrets.NPM_TOKEN }}
-          exclude: |
-            **/.storybook/**
-            **/node_modules/**
-            
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-
-    - name: Build project
-      run: |
-        yarn install
-        yarn build-storybook
-  
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./storybook-static/
-        server-dir: public_html/storybook/
+            token: ${{ secrets.NPM_TOKEN }}
+  deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Install dependencies
+          uses: actions/checkout@v3
+        - uses: actions/setup-node@v3  
+          with:
+            node-version: 12.x
+            registry-url: 'https://registry.npmjs.org'
+        - run: yarn install
+        - run: yarn build-storybook
+        - name: 📂 Sync files
+          uses: SamKirkland/FTP-Deploy-Action@4.3.2
+          with:
+            local-dir: ./storybook-static/
+            server-dir: public_html/storybook/
+            server: ${{ secrets.FTP_SERVER }}
+            username: ${{ secrets.USERNAME_FTP }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            protocol: ftps
+            port: 21     
