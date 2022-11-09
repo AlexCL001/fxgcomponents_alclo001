@@ -1,4 +1,4 @@
-# Travail pratique 1️⃣ 🐒
+# Travail pratique 1️⃣
 
 ### Groupe Christopher Petryk et Alexandre Cloutier-Lemay
 
