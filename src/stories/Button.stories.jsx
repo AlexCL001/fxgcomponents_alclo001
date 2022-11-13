@@ -31,6 +31,12 @@ outlined.args = {
     buttonText: "Warning Outlined",
 };
 
+export const Patate = Template.bind({});
+Patate.args = {
+    variation: "outlined",
+    colorTheme: "warning",
+    buttonText: "Patate",
+};
 
 
 
